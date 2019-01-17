@@ -1,3 +1,18 @@
+busybox (1:1.27.2-2ubuntu3.1) bionic; urgency=medium
+
+  * Fix symlink handling (LP: #1753572)
+    - debian/patches/CVE-2011-5325-2.patch: re-enable patch.
+    - debian/patches/CVE-2011-5325-3.patch:postpone creation of symlinks
+      with "suspicious" targets in archival/libarchive/data_extract_all.c,
+      archival/libarchive/unsafe_symlink_target.c, archival/tar.c,
+      include/bb_archive.h, testsuite/tar.tests.
+    - debian/patches/CVE-2011-5325-4.patch: extract "unsafe" symlinks
+      the same way tar/unzip does in archival/cpio.c.
+    - debian/patches/CVE-2011-5325-5.patch: fix symlink creation in
+      archival/libarchive/get_header_ar.c.
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Thu, 17 Jan 2019 13:16:38 -0500
+
 busybox (1:1.27.2-2ubuntu3) bionic; urgency=medium
 
   * debian/patches/CVE-2011-5325-2.patch: disable patch for now as the

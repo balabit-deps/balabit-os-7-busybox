@@ -20,4 +20,7 @@ install-readlink-in-bin.patch
 # Ubuntu patches
 test-bin.patch
 static-sh-alias.patch
-#CVE-2011-5325-2.patch
+CVE-2011-5325-2.patch
+CVE-2011-5325-3.patch
+CVE-2011-5325-4.patch
+CVE-2011-5325-5.patch

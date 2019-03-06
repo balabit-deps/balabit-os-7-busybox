@@ -1,3 +1,22 @@
+busybox (1:1.27.2-2ubuntu3.2) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: buffer overflow in wget
+    - debian/patches/CVE-2018-1000517.patch: check chunk length in
+      networking/wget.c.
+    - CVE-2018-1000517
+  * SECURITY UPDATE: out-of-bounds read in udhcp
+    - debian/patches/CVE-2018-20679.patch: check that 4-byte options are
+      indeed 4-byte in networking/udhcp/common.*,
+      networking/udhcp/dhcpc.c, networking/udhcp/dhcpd.c.
+    - CVE-2018-20679
+  * SECURITY UPDATE: incomplete fix for out-of-bounds read in udhcp
+    - debian/patches/CVE-2019-5747.patch: when decoding DHCP_SUBNET, ensure
+      it is 4 bytes long in networking/udhcp/common.*,
+      networking/udhcp/dhcpc.c.
+    - CVE-2019-5747
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 06 Mar 2019 15:51:41 -0500
+
 busybox (1:1.27.2-2ubuntu3.1) bionic; urgency=medium
 
   * Fix symlink handling (LP: #1753572)

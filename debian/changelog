@@ -1,3 +1,18 @@
+busybox (1:1.27.2-2ubuntu3.3) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: missing ssl cert validation in wget applet
+    - debian/patches/CVE-2018-1000500-pre1.patch: emit a message that
+      certificate verification is not implemented in networking/wget.c.
+    - debian/patches/CVE-2018-1000500-pre2.patch: print warning only once
+      in networking/wget.c.
+    - debian/patches/CVE-2018-1000500-1.patch: implement TLS verification
+      with ENABLE_FEATURE_WGET_OPENSSL in networking/wget.c.
+    - debian/patches/CVE-2018-1000500-2.patch: fix openssl options for cert
+      verification in networking/wget.c.
+    - CVE-2018-1000500
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Fri, 18 Sep 2020 10:26:16 -0400
+
 busybox (1:1.27.2-2ubuntu3.2) bionic-security; urgency=medium
 
   * SECURITY UPDATE: buffer overflow in wget
